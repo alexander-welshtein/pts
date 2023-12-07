@@ -2940,7 +2940,7 @@ See https://github.com/williamngan/pts for details. */
     add(p) {
       let player = typeof p == "function" ? { animate: p } : p;
       let k = this.playerCount++;
-      let pid = this.id + k;
+      let pid = player.animateID || this.id + k;
       this.players[pid] = player;
       player.animateID = pid;
       if (player.resize && this.bound.inited)
